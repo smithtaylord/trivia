@@ -15,16 +15,10 @@ class QuestionsService {
         }
     }
     async getQuestions(category) {
-        // if (category == 'music') {
         const res = await opentdb.get(`api.php?amount=10&category=${category}&difficulty=easy&type=multiple`)
         const questions = res.data.results.map(q => new Question(q))
         appState.questions = questions
-        // } else if (category == 'general') {
-        //     const res = await opentdb.get('api.php?amount=10&category=9&difficulty=easy&type=multiple')
-        //     console.log('here is the raw data', res.data.results);
-        //     const questions = res.data.results.map(q => new Question(q))
-        //     appState.questions = questions
-        // }
+
     }
 
 }

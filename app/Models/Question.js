@@ -7,7 +7,6 @@ export class Question {
         this.shuffAnswers = this.answers.sort((a, b) => 0.5 - Math.random())
     }
 
-
     get QuestionTemplate() {
         return `
 <div>
